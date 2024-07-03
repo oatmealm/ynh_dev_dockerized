@@ -43,10 +43,8 @@ RUN echo '#!/bin/bash' > /install_yunohost.sh && \
     echo 'curl https://install.yunohost.org | bash -s -- -a' >> /install_yunohost.sh && \
     chmod +x /install_yunohost.sh
 
-# Run YunoHost installation script at build time [didn't try]
+# Run YunoHost installation script at build time [needs systemd, won't work]
 # RUN /install_yunohost.sh -a -f
-
-# RUN curl https://install.yunohost.org | bash -s -- -a
 
 # Clean up
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
